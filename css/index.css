@@ -24,8 +24,6 @@
   --screen-desktop: 1300px;
 }
 
-
-
 /* Config */
 *,
 body {
@@ -42,6 +40,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.d-none {
+  display: none;
 }
 
 /* Header */
@@ -72,13 +74,13 @@ header nav {
   height: 4rem;
 }
 
-
 .hamburger {
   display: none;
 }
 
 .hamburger svg {
   transform: scale(1.5);
+  cursor: pointer;
 }
 
 
@@ -112,18 +114,51 @@ header nav {
   }
 }
 
-
 /* Main - sidebar */
 
 .sidebar {
+  padding: 1rem;
   position: absolute;
-  width: 340px;
+  width: 240px;
   height: 100vh;
   background-color: var(--color-tertiary);
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar .close-icon {
+  color: var(--color-light);
+  text-align: end;
+  font-size: var(--fs-2xl);
+}
+
+.sidebar .close-icon svg {
+  cursor: pointer;
+}
+
+.sidebar_links {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar_links a {
+  color: var(--color-light);
+  font-size: var(--fs-xl);
+}
+
+@media screen and (min-width: 800px) {
+  .sidebar {
+    display: none;
+  }
 }
 
 /* Main - lead */
 .lead {
+  margin: auto;
   padding: 5rem;
   display: flex;
   justify-content: space-between;
@@ -160,7 +195,8 @@ header nav {
 
 @media screen and (max-width: 1300px) {
   .lead_right h1 {
-    font-size: var(--fs-4xl);
+    margin-top: 4rem;
+    font-size: var(--fs-3xl);
   }
 
   .lead_right {
