@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Mj_Thameen Book";
+  src: url("Mj_ThameenBook.eot");
+  src: url("Mj_ThameenBook.eot?#iefix") format("embedded-opentype"),
+    url("Mj_ThameenBook.woff2") format("woff2"),
+    url("Mj_ThameenBook.woff") format("woff"),
+    url("Mj_ThameenBook.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
