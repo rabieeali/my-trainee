@@ -4,7 +4,12 @@
   --color-tertiary: #0e8388;
   --color-light: #cbe4de;
   --color-black: #000;
-  --color-bg: #fbfbfb;
+
+  --color-telegram: #229ED9;
+  --color-instagram: #e4405f;
+  --color-twitter: #1da1f2;
+  --color-whatsapp: #25D366;
+  --color-facebook: #3b5998;
 
   --font-samin: "Mj_Thameen Book";
   --fw-normal: 400;
@@ -34,8 +39,10 @@ body {
   direction: rtl;
 }
 
-body {
+body,
+html {
   background-color: var(--color-bg);
+  height: 100%;
 }
 
 a {
@@ -118,7 +125,8 @@ header nav {
 
 .sidebar {
   padding: 1rem;
-  position: absolute;
+  position: fixed;
+  z-index: 9;
   width: 240px;
   height: 100vh;
   background-color: var(--color-tertiary);
@@ -222,5 +230,134 @@ header nav {
   .lead_right,
   .lead_left {
     width: 100%;
+  }
+}
+
+
+/* Footer */
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  border-top: 1px solid var(--color-secondary);
+}
+
+.footer .footer_right {
+  width: 100%;
+}
+
+.footer .footer_right img {
+  width: 150px;
+  height: 150px;
+}
+
+.footer .footer_right h5 {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-normal);
+  padding: 1rem;
+
+}
+
+.footer .footer_right .icons {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin: 1rem 0;
+}
+
+.footer .footer_right .icons svg {
+  transform: scale(2);
+}
+
+
+
+.footer .footer_right .icons>*:nth-child(1) {
+  color: var(--color-telegram);
+}
+
+.footer .footer_right .icons>*:nth-child(2) {
+  color: var(--color-instagram);
+}
+
+.footer .footer_right .icons>*:nth-child(3) {
+  color: var(--color-whatsapp);
+
+}
+
+.footer .footer_right .icons>*:nth-child(4) {
+  color: var(--color-facebook);
+}
+
+
+.footer .footer_right .icons>* {
+  transition: all ease 0.4s;
+}
+
+.footer .footer_right .icons>*:hover {
+  transform: translateY(-10px);
+}
+
+.footer .footer_right .contacts {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.footer .footer_right .contacts .call_me {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+.footer .footer_right .contacts .call_me {
+  font-weight: var(--fw-bold);
+}
+
+.footer .footer_right .contacts .call_me a {
+  color: var(--color-tertiary);
+}
+
+
+.footer .footer_left {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.footer .footer_left .list h6 {
+  color: var(--color-primary);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+}
+
+.footer .footer_left .list ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.footer .footer_left .list ul li a {
+  color: var(--color-secondary);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+}
+
+@media screen and (max-width:1000px) {
+  .footer {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .footer .footer_left {
+    padding: 0 1rem;
+    grid-template-columns: 1fr;
   }
 }
